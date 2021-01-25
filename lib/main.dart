@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'networking/AppService.dart';
+import 'networking/main_service.dart';
 
 void main() {
   setUpServiceLocator();
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: NoteList(),
+      home: ,
     );
   }
 }

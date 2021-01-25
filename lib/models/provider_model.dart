@@ -7,8 +7,8 @@ class ProviderModel {
   String name;
   String description;
   String rating;
-  String active_status;
-  String provider_type;
+  DataModel active_status;
+  DataModel provider_type;
   String state;
   List<ImageModel> images;
   String address;
@@ -21,11 +21,24 @@ class ProviderModel {
         name: jsonData["name"],
         description: jsonData["description"],
         rating: jsonData["rating"],
-        active_status: jsonData["active_status"],
-        provider_type: jsonData["provider_type"],
+        active_status: DataModel.fromJson(jsonData["active_status"]),
+        provider_type: DataModel.fromJson(jsonData["provider_type"]),
         state: jsonData["state"],
         images: jsonData["images"],
         address: jsonData["address"]
     );
+  }
+
+  Map<String, dynamic> ProviderModel.toJson() {
+    return {
+        "name": name,
+        "description": description,
+        "rating": rating,
+        "active_status": active_status,
+        "provider_type": provider_type,
+        "state": state,
+        "images": images,
+        "address": address
+    };
   }
 }
